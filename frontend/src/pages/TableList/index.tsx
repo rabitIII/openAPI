@@ -1,20 +1,20 @@
-import { addRule, removeRule, rule, updateRule } from '@/services/ant-design-pro/api';
+// import { addRule, removeRule, updateRule } from '@/services/ant-design-pro/api';
 import { PlusOutlined } from '@ant-design/icons';
 import type { ActionType, ProColumns, ProDescriptionsItemProps } from '@ant-design/pro-components';
 import {
   FooterToolbar,
-  ModalForm,
   PageContainer,
   ProDescriptions,
-  ProFormText,
-  ProFormTextArea,
   ProTable,
 } from '@ant-design/pro-components';
 import { FormattedMessage, useIntl } from '@umijs/max';
 import { Button, Drawer, message } from 'antd';
 import React, { useRef, useState } from 'react';
 import type { FormValueType } from './components/UpdateForm';
-import UpdateForm from './components/UpdateForm';
+// import UpdateForm from './components/UpdateForm';
+import CreateModel from './components/CreateModel';
+import UpdateModel from './components/UpdateModel';
+import { addRule, removeRule, rule, updateRule } from '@/services/backend-test/api';
 
 /**
  * @en-US Add node
@@ -31,31 +31,6 @@ const handleAdd = async (fields: API.RuleListItem) => {
   } catch (error) {
     hide();
     message.error('Adding failed, please try again!');
-    return false;
-  }
-};
-
-/**
- * @en-US Update node
- * @zh-CN 更新节点
- *
- * @param fields
- */
-const handleUpdate = async (fields: FormValueType) => {
-  const hide = message.loading('Configuring');
-  try {
-    await updateRule({
-      name: fields.name,
-      desc: fields.desc,
-      key: fields.key,
-    });
-    hide();
-
-    message.success('Configuration is successful');
-    return true;
-  } catch (error) {
-    hide();
-    message.error('Configuration failed, please try again!');
     return false;
   }
 };
@@ -107,7 +82,49 @@ const TableList: React.FC = () => {
    * */
   const intl = useIntl();
 
-  const columns: ProColumns<API.RuleListItem>[] = [
+  /**
+   * @en-US Add node
+   * @zh-CN 添加节点
+   * @param fields
+   */
+  const handleAdd = async (fields: API.InterfaceInfo) => {
+    const hide = message.loading('正在添加');
+    try {
+      await addRule({ ...fields });
+      hide();
+      message.success('Added successfully');
+      return true;
+    } catch (error) {
+      hide();
+      message.error('Adding failed, please try again!');
+      return false;
+    }
+  };
+
+  /**
+   * @en-US Update node
+   * @zh-CN 更新节点
+   *
+   * @param fields
+   */
+  const handleUpdate = async (fields: API.InterfaceInfo) => {
+    const hide = message.loading('修改中');
+    try {
+      await updateRule({
+        ...fields,
+      });
+      hide();
+
+      message.success('操作成功！');
+      return true;
+    } catch (error: any) {
+      hide();
+      message.error('操作失败, ' + error.message);
+      return false;
+    }
+  };
+
+  const columns: ProColumns<API.InterfaceInfo>[] = [
     {
       title: 'id',
       dataIndex: 'id',
@@ -117,6 +134,14 @@ const TableList: React.FC = () => {
       title: '接口名称',
       dataIndex: 'name',
       valueType: 'text',
+      formItemProps: {
+        rules: [
+          {
+            required: true,
+            message: '名称错误',
+          },
+        ],
+      },
     },
     {
       title: '描述',
@@ -162,11 +187,13 @@ const TableList: React.FC = () => {
       title: '创建时间',
       dataIndex: 'createTime',
       valueType: 'dateTime',
+      hideInForm: true,
     },
     {
       title: '更新时间',
       dataIndex: 'updateTime',
       valueType: 'dateTime',
+      hideInForm: true,
     },
     {
       title: '操作',
@@ -180,14 +207,15 @@ const TableList: React.FC = () => {
             setCurrentRow(record);
           }}
         >
-          <FormattedMessage id="pages.searchTable.config" defaultMessage="Configuration" />
+          {/* <FormattedMessage id="pages.searchTable.config" defaultMessage="Configuration" /> */}
+          修改
         </a>,
-        <a key="subscribeAlert" href="https://procomponents.ant.design/">
-          <FormattedMessage
-            id="pages.searchTable.subscribeAlert"
-            defaultMessage="Subscribe to alerts"
-          />
-        </a>,
+        // <a key="subscribeAlert" href="https://procomponents.ant.design/">
+        //   <FormattedMessage
+        //     id="pages.searchTable.subscribeAlert"
+        //     defaultMessage="Subscribe to alerts"
+        //   />
+        // </a>,
       ],
     },
   ];
@@ -262,42 +290,8 @@ const TableList: React.FC = () => {
           </Button>
         </FooterToolbar>
       )}
-      <ModalForm
-        title={intl.formatMessage({
-          id: 'pages.searchTable.createForm.newRule',
-          defaultMessage: 'New rule',
-        })}
-        width="400px"
-        open={createModalOpen}
-        onOpenChange={handleModalOpen}
-        onFinish={async (value) => {
-          const success = await handleAdd(value as API.RuleListItem);
-          if (success) {
-            handleModalOpen(false);
-            if (actionRef.current) {
-              actionRef.current.reload();
-            }
-          }
-        }}
-      >
-        <ProFormText
-          rules={[
-            {
-              required: true,
-              message: (
-                <FormattedMessage
-                  id="pages.searchTable.ruleName"
-                  defaultMessage="Rule name is required"
-                />
-              ),
-            },
-          ]}
-          width="md"
-          name="name"
-        />
-        <ProFormTextArea width="md" name="desc" />
-      </ModalForm>
-      <UpdateForm
+      <UpdateModel
+        columns={columns}
         onSubmit={async (value) => {
           const success = await handleUpdate(value);
           if (success) {
@@ -314,7 +308,7 @@ const TableList: React.FC = () => {
             setCurrentRow(undefined);
           }
         }}
-        updateModalOpen={updateModalOpen}
+        visible={updateModalOpen}
         values={currentRow || {}}
       />
 
@@ -341,6 +335,16 @@ const TableList: React.FC = () => {
           />
         )}
       </Drawer>
+      <CreateModel
+        columns={columns}
+        onCancel={() => {
+          handleModalOpen(false);
+        }}
+        onSubmit={(values) => {
+          handleAdd(values);
+        }}
+        open={createModalOpen}
+      />
     </PageContainer>
   );
 };
