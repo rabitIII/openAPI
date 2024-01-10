@@ -10,17 +10,27 @@ import (
 var r *gin.Engine
 var apiGroup *gin.RouterGroup
 
-func init() {
+// 初始化函数，即程序未执行前就开始初始化，若带有指针则会报错nil
+//func init() {
+//	r := gin.Default()
+//
+//	// 全局中间件
+//	r.Use(middleware.Cors)
+//	apiGroup = r.Group("api")
+//
+//	UserRouter()
+//	//InterFaceRouter()
+//}
+
+func StartGin() {
 	r := gin.Default()
 
 	// 全局中间件
-	r.Use(middleware.Cors)
+	r.Use(middleware.Cors, middleware.RefreshToken)
 	apiGroup = r.Group("api")
 
-	addUserRouter()
-}
-
-func StartGin() {
+	UserRouter()
+	//InterFaceRouter()
 	addr := global.Config.System.Addr()
 	err := r.Run(addr)
 	if err != nil {

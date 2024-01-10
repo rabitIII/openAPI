@@ -43,10 +43,12 @@ declare namespace MYAPI {
     // userAvatar?: string;
     userName?: string;
     roleID?: number;
+    token?: string;
   };
   type MyUser = {
     nickName?: string;
     roleID?: number;
     id?: number;
+    token?: string;
   };
 }

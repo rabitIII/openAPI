@@ -5,9 +5,10 @@ import type { RunTimeLayoutConfig } from '@umijs/max';
 import { history, Link } from '@umijs/max';
 import { errorConfig } from './requestErrorConfig';
 // import React from 'react';
-import { getLoginUserUsingGet } from './services/backend-test/userController';
+import {getCurrentUser} from './services/backend-test/userController';
 const isDev = process.env.NODE_ENV === 'development';
 const loginPath = '/user/login';
+
 
 /**
  * @see  https://umijs.org/zh-CN/plugins/plugin-initial-state
@@ -18,8 +19,8 @@ export async function getInitialState(): Promise<InitialState> {
     loginUser: undefined,
   };
   try {
-    const res = await getLoginUserUsingGet();
-    // console.log(res.data);
+    const res = await getCurrentUser();
+    console.log(res.data);
     if (res.data) {
       state.loginUser = res.data;
     }

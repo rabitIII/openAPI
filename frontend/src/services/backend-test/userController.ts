@@ -2,8 +2,11 @@
 import { request } from '@umijs/max';
 
 /** 获取当前的用户 GET /api/currentUser */
-export async function getLoginUserUsingGet(options?: { [key: string]: any }) {
-  return request<MYAPI.BaseResponseUserBO>('/api/user/get/login', {
+export async function getCurrentUser(options?: { [key: string]: any }) {
+  return request<MYAPI.BaseResponseUserBO>('/api/user/currentUser', {
+    headers: {
+      'Content-Type': 'application/json',
+    },
     method: 'GET',
     ...(options || {}),
   });
@@ -14,7 +17,7 @@ export async function userLoginUsingPOST(
   body: MYAPI.UserLoginRequest,
   options?: { [key: string]: any },
 ) {
-  return request<MYAPI.BaseResponseUser>('/api/login', {
+  return request<MYAPI.BaseResponseUser>('/api/user/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

@@ -120,11 +120,14 @@ const Login: React.FC = () => {
       const res = await userLoginUsingPOST({ ...values });
       if (res.data) {
         // await fetchUserInfo();
-        const urlParams = new URL(window.location.href).searchParams;
-        history.push(urlParams.get('redirect') || '/');
         setInitialState({
           loginUser: res.data,
         });
+
+        setTimeout(()=>{
+          const urlParams = new URL(window.location.href).searchParams;
+          history.push(urlParams.get('redirect') || '/');
+        }, 100);
         return;
       }
       // 如果失败去设置用户错误信息

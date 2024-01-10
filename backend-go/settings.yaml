@@ -16,6 +16,6 @@ redis:
   password: ""
   poolSize: 100
 jwt:
-  expires: 8
-  issuer: "guanji"
-  secret: "uid*api*pwd&GJ"
+  expires: 2  # 过期时间（hour）
+  issuer: "guanji"  # 签发人
+  secret: "uid*api*pwd&GJ"  # 密钥

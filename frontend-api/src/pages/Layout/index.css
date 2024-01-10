@@ -1,0 +1,19 @@
+.layout {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  .header {
+    justify-content: space-between;
+    background-color: #cfe7ef;
+    padding: 0 24px;
+    .demo-logo {
+      color: white;
+      font-size: 10rem;
+    }
+    .menu {
+      /*border: 1px solid darkgreen;*/
+      width: 150px;
+      /* margin-right: 10px; */
+    }
+  }
+}

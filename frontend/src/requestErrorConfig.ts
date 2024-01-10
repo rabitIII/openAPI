@@ -1,22 +1,39 @@
-﻿import type { RequestOptions } from '@@/plugin-request/request';
-import type { RequestConfig } from '@umijs/max';
-import { message, notification } from 'antd';
+﻿import type { RequestConfig } from '@umijs/max';
+// import {RequestOptions} from "@@/plugin-request/request";
+// import { message, notification } from 'antd';
 
 // 错误处理方案： 错误类型
-enum ErrorShowType {
-  SILENT = 0,
-  WARN_MESSAGE = 1,
-  ERROR_MESSAGE = 2,
-  NOTIFICATION = 3,
-  REDIRECT = 9,
-}
+// enum ErrorShowType {
+//   SILENT = 0,
+//   WARN_MESSAGE = 1,
+//   ERROR_MESSAGE = 2,
+//   NOTIFICATION = 3,
+//   REDIRECT = 9,
+// }
 // 与后端约定的响应数据格式
 interface ResponseStructure {
   success: boolean;
   data: any;
   errorCode?: number;
   errorMessage?: string;
-  showType?: ErrorShowType;
+  // showType?: ErrorShowType;
+}
+
+const authHeaderInterceptor = (url: string, options: RequestConfig) => {
+  const authHeader = { Authorization: 'Bearer ' + localStorage.getItem('jwt') || ''};
+  return {
+    url: `${url}`,
+    options: {...options, interceptors: true, headers: authHeader},
+  }
+}
+
+const authResponseInterceptors = (response: Response, options: RequestConfig) => {
+  response.headers.append('interceptors', 'yes yo');
+  return response
+}
+
+function setToken(token: string) {
+  localStorage.setItem('jwt',token);
 }
 
 /**
@@ -26,7 +43,7 @@ interface ResponseStructure {
  */
 export const errorConfig: RequestConfig = {
   baseURL: "http://localhost:8089",
-  withCredentials: true,
+  // withCredentials: true,
   // 错误处理： umi@3 的错误处理方案。
   // errorConfig: {
   //   // 错误抛出
@@ -87,31 +104,35 @@ export const errorConfig: RequestConfig = {
   //   },
   // },
 
+
   // 请求拦截器
   requestInterceptors: [
-    (config: RequestOptions) => {
-      // 拦截请求配置，进行个性化处理。
-      const url = config?.url?.concat('?token = 123');
-      return { ...config, url };
-    },
+    // (config: RequestOptions) => {
+    //   // 拦截请求配置，进行个性化处理。
+    //   const url = config?.url?.concat('?token = 123');
+    //   return { ...config, url };
+    // },
+    authHeaderInterceptor
   ],
 
   // 响应拦截器
   responseInterceptors: [
     (response) => {
       // 拦截响应数据，进行个性化处理
-      const { data } = response as unknown as ResponseStructure;
+      const {data} = response as unknown as ResponseStructure;
 
       // if (data?.success === false) {
       //   message.error('请求失败！');
       // }
-
+      if (response.headers["x-refresh-token"]) {
+        setToken(response.headers["x-refresh-token"] || '');
+      }
       console.log('data: ', data);
       if (data?.code !== 0) {
         throw new Error('响应错误 ' + data.message);
       }
-
       return response;
-    },
+    }
+    // authResponseInterceptors
   ],
 };

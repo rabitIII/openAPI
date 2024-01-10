@@ -11,6 +11,7 @@ func DB() {
 		&models.UserModel{},
 		&models.RoleModel{},
 		&models.LoginModel{},
+		&models.LoginModel{},
 	)
 
 	if err != nil {

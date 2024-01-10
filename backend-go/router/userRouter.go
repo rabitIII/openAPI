@@ -1,9 +1,12 @@
 package router
 
-import "backend-go/api"
+import (
+	"backend-go/api"
+	"backend-go/middleware"
+)
 
-func addUserRouter() {
-	app := api.App.UserApi
+func UserRouter() {
+	userApi := api.App.UserApi
 
 	userRouter := apiGroup.Group("user")
 	{
@@ -12,13 +15,13 @@ func addUserRouter() {
 			register	注册（管理员进行创建）
 			logout		登出
 		*/
-		userRouter.POST("login", app.UserLoginView)
-		userRouter.POST("register", app.UserCreateView)
-		//userRouter.POST("logout", app.UserLogout)
+		userRouter.POST("login", userApi.UserLoginView)
+		userRouter.POST("register", userApi.UserCreateView)
+		//userRouter.POST("logout", app.UserLogoutView)
 
 		/*
-			LoginToken
+			currentUser	根据Token获取的id进行查找用户
 		*/
-		userRouter.GET("loginToken", app.GetLoginUserUsingGet)
+		userRouter.GET("currentUser", middleware.RefreshToken, userApi.GetCurrentUser)
 	}
 }

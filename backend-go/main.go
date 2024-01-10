@@ -5,7 +5,6 @@ import (
 	"backend-go/flags"
 	"backend-go/global"
 	"backend-go/router"
-	"fmt"
 )
 
 func main() {
@@ -18,8 +17,8 @@ func main() {
 	// redis
 	global.Redis = core.InitRedis(0)
 
-	val, err := global.Redis.Get("name").Result()
-	fmt.Println(val, err)
+	//val, err := global.Redis.Get("name").Result()
+	//fmt.Println(val, err)
 
 	// 命令行参数运行脚本
 	option := flags.Parse()
