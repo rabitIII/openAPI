@@ -30,7 +30,7 @@ func StartGin() {
 	apiGroup = r.Group("api")
 
 	UserRouter()
-	//InterFaceRouter()
+	InterFaceRouter()
 	addr := global.Config.System.Addr()
 	err := r.Run(addr)
 	if err != nil {

@@ -23,7 +23,7 @@ func RefreshToken(c *gin.Context) {
 	//if time.Since(claims.ExpiresAt.Local()) < time.Duration(global.Config.Jwt.Expires)*time.Hour {
 	//	newToken, err := jwts.GenToken(claims.JwyPayLoad)
 	//}
-	fmt.Printf("token: %s\n", token)
+	//fmt.Printf("token: %s\n", token)
 	if token == "" {
 		c.Next()
 	}
@@ -37,7 +37,7 @@ func RefreshToken(c *gin.Context) {
 	if id == "" {
 		c.Next()
 	}
-	fmt.Sprintf("id: %s\n", id)
+	fmt.Sprintln("id: %s\n", id)
 	// 存在用户，刷新token时间
 	tokenTime := time.Duration(global.Config.Jwt.Expires) * time.Hour
 	err = global.Redis.Expire(tokenKey, tokenTime).Err()

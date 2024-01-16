@@ -13,8 +13,8 @@ import (
 
 // UserLoginRequest 登录时所需要的数据
 type UserLoginRequest struct {
-	UserName string `json:"userName" binding:"required" label:"用户名"`
-	Password string `json:"password" binding:"required" label:"密码"`
+	UserAccount  string `json:"userAccount" binding:"required" label:"用户名"`
+	UserPassword string `json:"userPassword" binding:"required" label:"密码"`
 }
 
 // UserLoginView
@@ -22,23 +22,23 @@ type UserLoginRequest struct {
 // Description: 用户登录，需要参数：userName、password
 func (UserApi) UserLoginView(c *gin.Context) {
 	var cr UserLoginRequest
-	//var userDTO models.UserModel
+	//var userDTO models.UserMode
 	err := c.ShouldBindJSON(&cr)
 	if err != nil {
-		res.FailWithError(err, &cr, c)
+		res.FailWithValidError(err, &cr, c)
 		return
 	}
 
 	// 数据库查询验证该账号数据
 	var user models.UserModel
-	err = global.DB.Take(&user, "userName = ?", cr.UserName).Error
+	err = global.DB.Take(&user, "userAccount = ?", cr.UserAccount).Error
 	if err != nil {
-		global.Log.Warn("用户名不存在", cr.UserName)
+		global.Log.Warn("用户名不存在", cr.UserAccount)
 		res.FailWithMsg("用户名或密码错误", c)
 		return
 	}
-	if !pwd.CheckPwd(user.Password, cr.Password) {
-		global.Log.Warn("密码错误", cr.UserName, cr.Password)
+	if !pwd.CheckPwd(user.UserPassword, cr.UserPassword) {
+		global.Log.Warn("密码错误", cr.UserAccount, cr.UserPassword)
 		res.FailWithMsg("用户名或密码错误", c)
 		return
 	}
@@ -71,7 +71,7 @@ func (UserApi) UserLoginView(c *gin.Context) {
 
 	// 验证通过后将response里的数据进行加密
 	token, err := jwts.GenToken(jwts.JwyPayLoad{
-		NickName: user.UserName,
+		NickName: user.UserAccount,
 		RoleID:   user.RoleID,
 		UserID:   user.ID,
 	})
@@ -97,4 +97,8 @@ func (UserApi) UserLoginView(c *gin.Context) {
 	// response返回
 	res.OKWithData(token, c)
 	return
+}
+
+func (UserApi) UserLogoutView(c *gin.Context) {
+
 }

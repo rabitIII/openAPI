@@ -6,7 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func JwtAuth(c *gin.Context) {
+func JwtAdmin(c *gin.Context) {
 	token := c.Request.Header.Get("token")
 	if token == "" {
 		res.FailWithMsg("未携带token", c)
@@ -16,6 +16,12 @@ func JwtAuth(c *gin.Context) {
 	claims, err := jwts.ParseToken(token)
 	if err != nil {
 		res.FailWithMsg("token错误", c)
+		c.Abort()
+		return
+	}
+
+	if claims.RoleID != 1 {
+		res.FailWithMsg("权限错误！", c)
 		c.Abort()
 		return
 	}

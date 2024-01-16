@@ -10,25 +10,26 @@ import (
 )
 
 type UserCreateRequest struct {
-	UserName string `json:"userName" binding:"required"` // 用户名
-	Password string `json:"password" binding:"required"` // 密码
-	NickName string `json:"nickName"`                    // 昵称
-	RoleID   uint   `json:"roleID" binding:"required"`   // 角色id
+	UserAccount  string `json:"userAccount" binding:"required"`  // 用户名
+	UserPassword string `json:"userPassword" binding:"required"` // 密码
+	NickName     string `json:"nickName"`                        // 昵称
+	RoleID       uint   `json:"roleID" binding:"required"`       // 角色id,权限表的id
+	//IsSystem bool   `json:"isSystem" binding:"required"` // 系统权限(0:普通用户,1:管理员)
 }
 
 func (UserApi) UserCreateView(c *gin.Context) {
 	var cr UserCreateRequest
 	err := c.ShouldBindJSON(&cr)
 	if err != nil {
-		res.FailWithError(err, &cr, c)
+		res.FailWithValidError(err, &cr, c)
 		return
 	}
 
 	// 检索用户
 	var user models.UserModel
-	err = global.DB.Take(&user, "userName = ?", cr.UserName).Error
+	err = global.DB.Take(&user, "userAccount = ?", cr.UserAccount).Error
 	if err == nil {
-		res.FailWithMsg("用户名已存在", c)
+		res.FailWithMsg("账号存在", c)
 		return
 	}
 
@@ -40,10 +41,10 @@ func (UserApi) UserCreateView(c *gin.Context) {
 	}
 
 	err = global.DB.Create(&models.UserModel{
-		UserName: cr.UserName,
-		Password: pwd.HashPwd(cr.Password),
-		NickName: cr.NickName,
-		RoleID:   cr.RoleID,
+		UserAccount:  cr.UserAccount,
+		UserPassword: pwd.HashPwd(cr.UserPassword),
+		NickName:     cr.NickName,
+		RoleID:       cr.RoleID,
 	}).Error
 	if err != nil {
 		global.Log.Error(err)

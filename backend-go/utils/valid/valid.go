@@ -19,25 +19,29 @@ var (
 )
 
 func init() {
-	InitTrans("zh")
+	err := InitTrans("zh")
+	if err != nil {
+		return
+	}
 }
 
+// InitTrans 初始化翻译器
 func InitTrans(locale string) (err error) {
 	// 修改gin框架中的Validator引擎属性，实现自定制
 	if v, ok := binding.Validator.Engine().(*validator.Validate); ok {
 
-		// 注册一个获取json tag的自定义ff
-		v.RegisterTagNameFunc(func(fld reflect.StructField) string {
-			name := strings.SplitN(fld.Tag.Get("label"), ",", 2)[0]
-			if name == "" {
-				// 没有label就json
-				name = strings.SplitN(fld.Tag.Get("json"), ",", 2)[0]
-			}
-			if name == "-" {
-				return ""
-			}
-			return name
-		})
+		//// 注册一个获取json tag的自定义ff
+		//v.RegisterTagNameFunc(func(fld reflect.StructField) string {
+		//	name := strings.SplitN(fld.Tag.Get("label"), ",", 2)[0]
+		//	if name == "" {
+		//		// 没有label就json
+		//		name = strings.SplitN(fld.Tag.Get("json"), ",", 2)[0]
+		//	}
+		//	if name == "-" {
+		//		return ""
+		//	}
+		//	return name
+		//})
 
 		zhT := zh.New() // 中文翻译器
 		enT := en.New() // 英文翻译器
@@ -83,15 +87,32 @@ func Error(err error) (ret string) {
 	return ret
 }
 
-func ValidError(err error) (ret string) {
+func ValidError(err error, obj any) (ret string, data map[string]string) {
+	data = map[string]string{}
+	getObj := reflect.TypeOf(obj)
 	validationErrors, ok := err.(validator.ValidationErrors)
 	if !ok {
-		return err.Error()
+		return err.Error(), data
 	}
 
 	for _, e := range validationErrors {
 		msg := e.Translate(trans)
+		fieldName := e.Field()
+		filed, ok := getObj.Elem().FieldByName(fieldName)
+		if ok {
+			alias := fieldName
+			label, labelOk := filed.Tag.Lookup("label")
+			jsonLabel, jsonOK := filed.Tag.Lookup("json")
+			if labelOk {
+				alias = label
+			} else {
+				if jsonOK {
+					alias = jsonLabel
+				}
+			}
+			strings.ReplaceAll(msg, fieldName, alias)
+		}
 		ret += msg + ";"
 	}
-	return ret
+	return ret, data
 }

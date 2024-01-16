@@ -5,61 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="039eb279-339a-4cd1-9566-48b68c8f09f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/InterfaceInfo_api/interface_create.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/user_api/user_currentUser.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proto/rpc-api.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/router/interfaceRouter.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend-api/.eslintrc.cjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend-api/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend-api/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend-api/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend-api/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend-api/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend-api/public/vite.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend-api/src/App.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend-api/src/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend-api/src/api/adminApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend-api/src/assets/react.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend-api/src/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend-api/src/main.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend-api/src/pages/Layout/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend-api/src/routes/router.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend-api/src/utils/jwts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend-api/src/utils/request.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend-api/vite.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend-api/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/backend-go.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/backend-go.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/InterfaceInfo_api/enter.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/InterfaceInfo_api/init.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/enter.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/init.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/user_api/enter.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/user_api/init.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/user_api/getLoginUserUsingGet.go" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/InterfaceInfo_api/interface_read.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/InterfaceInfo_api/interface_update.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/user_api/user_list.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/user_api/user_remove.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/interfaceInfo_model.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/common/list/query_list.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend-api/src/components/Home/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend-api/src/components/Home/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend-api/src/components/TableList/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9510b2d-e626-48dc-aad5-6bd70d08cd85.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9510b2d-e626-48dc-aad5-6bd70d08cd85.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/InterfaceInfo_api/interface_create.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/InterfaceInfo_api/interface_create.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/user_api/user_create.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/user_api/user_create.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/user_api/user_login.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/user_api/user_login.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/init_redis.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/init_redis.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flags/flags_db.go" beforeDir="false" afterPath="$PROJECT_DIR$/flags/flags_db.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/jwt_auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/Jwt_Admin.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/middleware/refreshToken.go" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/refreshToken.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/index.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/init.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/init.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/login_model.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/login_model.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/role_model.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/role_model.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user_model.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/user_model.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proto/rpc-api.proto" beforeDir="false" afterPath="$PROJECT_DIR$/proto/rpc-api.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/router/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/router/init.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/router/interfaceRouter.go" beforeDir="false" afterPath="$PROJECT_DIR$/router/interfaceRouter.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/router/userRouter.go" beforeDir="false" afterPath="$PROJECT_DIR$/router/userRouter.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/common/res/enter.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/common/res/init.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/settings.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/1.生成jwt.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/1.生成jwt.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/jwts/enter.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/jwts/init.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/config/proxy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/config/proxy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/pages/User/Login/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/pages/User/Login/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/requestErrorConfig.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/requestErrorConfig.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/services/backend-test/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/services/backend-test/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/services/backend-test/typings.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/services/backend-test/typings.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/services/backend-test/userController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/services/backend-test/userController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/router/user_router.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/common/res/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/common/res/init.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/valid/valid.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/valid/valid.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend-api/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/src/api/adminApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend-api/src/api/adminApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/src/pages/Layout/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend-api/src/pages/Layout/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/src/pages/Layout/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend-api/src/pages/Layout/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/src/pages/Login/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend-api/src/pages/Login/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/src/routes/router.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend-api/src/routes/router.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +90,7 @@
     &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.go.modules.automatic.dependencies.download&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;no-antdesign&quot;,
     &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/Code/Project/openapi/frontend-api&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,

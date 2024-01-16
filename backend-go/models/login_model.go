@@ -7,6 +7,6 @@ type LoginModel struct {
 	UserModel UserModel `gorm:"foreignKey:UserID" json:"-"`
 	NickName  string    `gorm:"column:nickName;size:42" json:"NickName"`
 	Token     string    `gorm:"size:256" json:"token"`
-	RoleID    uint      `json:"roleID" binding:"required"` // 角色id
-	CreateAt  time.Time `gorm:"autoUpdateTime" json:"createAt"`
+	RoleID    uint      `json:"role" binding:"required"` // 角色id
+	LoginAt   time.Time `gorm:"autoUpdateTime" json:"createAt"`
 }

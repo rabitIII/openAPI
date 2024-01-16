@@ -75,3 +75,8 @@ func FailWithError(err error, obj any, c *gin.Context) {
 	errorMsg := valid.Error(err)
 	FailWithMsg(errorMsg, c)
 }
+
+func FailWithValidError(err error, obj any, c *gin.Context) {
+	errorMsg, data := valid.ValidError(err, obj)
+	Fail(validCode, data, errorMsg, c)
+}

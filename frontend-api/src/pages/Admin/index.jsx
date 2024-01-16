@@ -8,10 +8,10 @@ import {
   ApiOutlined,
   ExclamationCircleFilled,
 } from "@ant-design/icons";
-import { Breadcrumb, Layout, Menu, theme, Modal } from "antd";
+import { Breadcrumb, Layout as AntLayout, Menu, theme, Modal } from "antd";
 import { useEffect, useState } from "react";
-import { Link, Outlet, useNavigate } from "react-router-dom";
-const { Header, Content, Sider } = Layout;
+import { Outlet, useNavigate } from "react-router-dom";
+const { Header, Content, Sider } = AntLayout;
 const { confirm } = Modal;
 const items1 = [
   {
@@ -57,15 +57,15 @@ const items2 = [
     icon: <UserOutlined />,
   },
 ];
-const App = () => {
+const AdminLayout = () => {
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
   const [selectkey, Setselectkey] = useState("home");
   const navigate = useNavigate();
   useEffect(() => {
-    if (!localStorage.getItem("token")) {
-      navigate("/");
+    if (!sessionStorage.getItem("token")) {
+      navigate("/login");
     }
   }, []);
 
@@ -73,10 +73,10 @@ const App = () => {
     Setselectkey(key);
     switch (key) {
       case "home":
-        navigate("/layout");
+        navigate("/admin");
         break;
       case "api-admin":
-        navigate("/layout/apiAdmin");
+        navigate("/admin/interfaceinfo");
         break;
       case "exit":
         confirm({
@@ -86,8 +86,8 @@ const App = () => {
           okText: "确定",
           cancelText: "取消",
           onOk() {
-            localStorage.clear();
-            navigate("/");
+            sessionStorage.clear();
+            navigate("/login");
           },
         });
         break;
@@ -95,7 +95,7 @@ const App = () => {
   };
 
   return (
-    <Layout className="layout">
+    <AntLayout className="layout">
       <Header
         className="header"
         style={{
@@ -118,7 +118,7 @@ const App = () => {
           onClick={onClick}
         />
       </Header>
-      <Layout>
+      <AntLayout>
         <Sider
           width={200}
           style={{
@@ -137,7 +137,7 @@ const App = () => {
             onClick={onClick}
           />
         </Sider>
-        <Layout
+        <AntLayout
           style={{
             padding: "0 24px 24px",
           }}
@@ -146,11 +146,8 @@ const App = () => {
             style={{
               margin: "16px 0",
             }}
-          >
-            <Breadcrumb.Item>Home</Breadcrumb.Item>
-            <Breadcrumb.Item>List</Breadcrumb.Item>
-            <Breadcrumb.Item>App</Breadcrumb.Item>
-          </Breadcrumb>
+            // items={[{ title: "Home" }, { title: "List" }, { title: "App" }]}
+          ></Breadcrumb>
           <Content
             style={{
               padding: 24,
@@ -162,9 +159,9 @@ const App = () => {
           >
             <Outlet />
           </Content>
-        </Layout>
-      </Layout>
-    </Layout>
+        </AntLayout>
+      </AntLayout>
+    </AntLayout>
   );
 };
-export default App;
+export default AdminLayout;

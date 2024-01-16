@@ -13,24 +13,26 @@ const Login = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (localStorage.getItem("token")) {
+    if (sessionStorage.getItem("token")) {
       console.log("token 已存在!");
-      navigate("/layout");
+      navigate("/admin");
     }
   }, [navigate]);
 
   const onFinish = async (values) => {
     try {
       const res = await login(values);
+      console.log("res:", res);
+      console.log("res.data:", res.data);
       if (res.data.data) {
-        navigate("/layout");
+        navigate("/admin");
       }
 
       // console.log(res)
     } catch (error) {
       console.log(error);
       message.error("登录失败, 请重试");
-      navigate("/");
+      // navigate("/");
     }
     // console.log(res);
     // // console.log(res.data.token)
@@ -66,7 +68,7 @@ const Login = () => {
         >
           <Form.Item
             label="Username"
-            name="userName"
+            name="userAccount"
             rules={[
               {
                 required: true,
@@ -79,7 +81,7 @@ const Login = () => {
 
           <Form.Item
             label="Password"
-            name="password"
+            name="userPassword"
             rules={[
               {
                 required: true,

@@ -23,5 +23,6 @@ func UserRouter() {
 			currentUser	根据Token获取的id进行查找用户
 		*/
 		userRouter.GET("currentUser", middleware.RefreshToken, userApi.GetCurrentUser)
+		userRouter.GET("list", userApi.UserListView)
 	}
 }
