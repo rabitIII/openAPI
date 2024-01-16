@@ -8,7 +8,7 @@ import (
 func UserRouter() {
 	userApi := api.App.UserApi
 
-	userRouter := apiGroup.Group("user")
+	userRouter := apiGroup.Group("users")
 	{
 		/*
 			login		登录
@@ -17,12 +17,20 @@ func UserRouter() {
 		*/
 		userRouter.POST("login", userApi.UserLoginView)
 		userRouter.POST("register", userApi.UserCreateView)
-		//userRouter.POST("logout", app.UserLogoutView)
+		//userRouter.POST("logout", userApi.UserLogoutView)
 
 		/*
 			currentUser	根据Token获取的id进行查找用户
 		*/
 		userRouter.GET("currentUser", middleware.RefreshToken, userApi.GetCurrentUser)
+
+		/*
+			list	用户列表
+			update	修改用户信息
+			delete	删除用户
+		*/
 		userRouter.GET("list", userApi.UserListView)
+		userRouter.PUT("update", userApi.UserUpdateView)
+		userRouter.POST("delete", userApi.UserRemoveView)
 	}
 }

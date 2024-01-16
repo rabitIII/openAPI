@@ -14,7 +14,7 @@ type UserCreateRequest struct {
 	UserPassword string `json:"userPassword" binding:"required"` // 密码
 	NickName     string `json:"nickName"`                        // 昵称
 	RoleID       uint   `json:"roleID" binding:"required"`       // 角色id,权限表的id
-	//IsSystem bool   `json:"isSystem" binding:"required"` // 系统权限(0:普通用户,1:管理员)
+	//IsSystem bool   `json:"isSystem" binding:"required"` // 系统权限(4:普通用户,1:管理员)
 }
 
 func (UserApi) UserCreateView(c *gin.Context) {
