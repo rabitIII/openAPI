@@ -12,9 +12,8 @@
 ### 前端
 
 - React 18
-- Ant Design Pro 5.x 脚手架
-- Ant Design && Pro-components组件库
-- Umi 前端框架
+- vite前端工具链
+- Ant Design
 
 ### 后端
 - Golang（开发语言）
