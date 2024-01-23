@@ -1,32 +1,46 @@
-import { Modal, Form, Input, Select } from "antd";
+import {Modal, Form, Input, Select} from "antd";
+import { useEffect, useRef } from "react";
 const { TextArea } = Input;
-const CreateModal = (props) => {
-  const { open, onCancel, onSubmit } = props;
+const UpdateModal = (props) => {
+  // eslint-disable-next-line react/prop-types
+  const { values, visible, onCancel, onSubmit } = props;
   const [form] = Form.useForm();
+
+  const formRef = useRef();
+
+  useEffect(() => {
+    if (formRef) {
+      formRef.current?.setFieldsValue(values);
+    }
+  }, [values]);
   return (
     <Modal
-      title="上传接口"
+      title="修改接口"
       width={650}
-      open={open}
+      open={visible}
       onCancel={() => onCancel?.()}
-      afterClose={() => {
-        form.resetFields();
-      }}
+      // afterClose={() => {
+      //   form.resetFields();
+      // }}
       cancelText="取消"
-      okText="创建"
+      okText="修改"
       onOk={() => {
         form.validateFields().then((values) => {
-          form.resetFields();
           onSubmit(values);
+          console.log(values);
         });
       }}
+      destroyOnClose={true}
     >
       <Form
         form={form}
-        // columns={columns}
-        // onFinish={async (value) => {
-        //   onSubmit?.(value);
-        // }}
+        initialValues={{
+          ...values,
+        }}
+        preserve={false}
+        onFinish={(values) => {
+          onSubmit?.(values)
+        }}
         labelCol={{
           span: 6,
         }}
@@ -38,7 +52,7 @@ const CreateModal = (props) => {
         <Form.Item name="title" label="接口名称" rules={[{ required: true }]}>
           <Input />
         </Form.Item>
-        <Form.Item name="desc" label="描述">
+        <Form.Item name="description" label="描述">
           <TextArea rows={4} />
         </Form.Item>
         <Form.Item name="method" label="请求方法">
@@ -72,4 +86,4 @@ const CreateModal = (props) => {
   );
 };
 
-export default CreateModal;
+export default UpdateModal;

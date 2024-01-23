@@ -12,7 +12,7 @@
 ### 前端
 
 - React 18
-- vite前端工具链
+- Vite前端工具链
 - Ant Design
 
 ### 后端

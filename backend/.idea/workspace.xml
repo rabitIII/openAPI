@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="039eb279-339a-4cd1-9566-48b68c8f09f7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/.idea/backend-go.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/.idea/dataSources/c5cc49bb-8c08-4b99-b26b-7809d5789e34.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/.idea/dataSources/d9510b2d-e626-48dc-aad5-6bd70d08cd85.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/.idea/dataSources/d9510b2d-e626-48dc-aad5-6bd70d08cd85/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/.idea/dataSources/d9510b2d-e626-48dc-aad5-6bd70d08cd85/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/.idea/dataSources/d9510b2d-e626-48dc-aad5-6bd70d08cd85/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/.idea/dataSources/d9510b2d-e626-48dc-aad5-6bd70d08cd85/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/.idea/dataSources/d9510b2d-e626-48dc-aad5-6bd70d08cd85/storage_v2/_src_/schema/testdb.kHS3yw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/api/InterfaceInfo_api/init.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/api/InterfaceInfo_api/interface_create.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/api/InterfaceInfo_api/interface_read.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/api/InterfaceInfo_api/interface_remove.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/api/InterfaceInfo_api/interface_update.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/api/init.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/api/user_api/init.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/api/user_api/user_create.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/api/user_api/user_currentUser.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/api/user_api/user_list.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/api/user_api/user_login.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/api/user_api/user_remove.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/api/user_api/user_update.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/config/config_jwt.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/config/config_mysql.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/config/config_redis.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/config/config_system.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/config/init.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/core/init_config.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/core/init_logrus.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/core/init_mysql.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/core/init_redis.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/flags/flags_db.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/flags/flags_load.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/flags/flags_port.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/flags/init.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/global/global.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/go.sum" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/middleware/Jwt_Admin.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/middleware/cors.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/middleware/refreshToken.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/models/init.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/models/interfaceInfo_model.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/models/login_model.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/models/role_model.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/models/user_model.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/proto/rpc-api.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/router/init.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/router/interfaceRouter.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/router/userRouter.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/service/common/list/query_list.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/service/common/res/init.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/settings.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/test/1.生成jwt.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/test/2.解析jwt.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/test/3.hashpwd验证.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/utils/jwts/constant.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/utils/jwts/generate_token.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/utils/jwts/init.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/utils/jwts/parse_token.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/utils/pwd/pwd.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/utils/response.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-go/utils/valid/valid.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/.eslintrc.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/public/vite.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/src/api/adminApi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/src/api/interfaceInfoApi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/src/assets/react.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/src/components/Home/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/src/components/Home/index.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/src/components/SearchList/index.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/src/components/TableList/index.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/src/error-page.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/src/main.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/src/pages/Admin/InterfaceInfo/components/CreateModal.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/src/pages/Admin/InterfaceInfo/components/UpdateModal.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/src/pages/Admin/InterfaceInfo/index.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/src/pages/Admin/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/src/pages/Admin/index.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/src/pages/Index/index.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/src/pages/Layout/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/src/pages/Layout/index.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/src/pages/Login/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/src/pages/Login/index.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/src/pages/RoleList/index.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/src/routes/router.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/src/utils/jwts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/src/utils/request.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/vite.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-api/yarn.lock" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Proto File" />
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" url="file://$PROJECT_DIR$/../../../../envs/Go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2ZsoiXT5LxFxuZ4LO5xMHn0Rksk" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultGoTemplateProperty": "Go File",
+    "DefaultProtoTemplateProperty": "Proto File",
+    "Go Build.go build 1.生成jwt.go.executor": "Run",
+    "Go Build.go build 2.解析jwt.go.executor": "Run",
+    "Go Build.go build 3.hashpwd验证.go.executor": "Run",
+    "Go Build.go build backend-go (1).executor": "Run",
+    "Go Build.go build backend-go.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "git-widget-placeholder": "no__ant-design-pro",
+    "go.import.settings.migrated": "true",
+    "last_opened_file_path": "D:/Code/Project/openapi_no-antdpro/frontend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql",
+      "redis"
+    ],
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "PLAIN_TEXT",
+      "yaml"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Code\Project\openapi\backend-go\api\user_api" />
+      <recent name="D:\Code\Project\openapi\backend-go\flags" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Go Build.go build backend-go (1)">
+    <configuration name="go build 2.解析jwt.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="backend-go" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <package value="backend-go" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/testdata/2.解析jwt.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build 3.hashpwd验证.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="backend-go" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <package value="backend-go" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/test/3.hashpwd验证.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build backend-go (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="backend-go" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/main.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build backend-go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="backend-go" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="backend-go" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/main.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build backend-go/test" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="backend-go" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="backend-go/test" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/test/3.hashpwd验证.go" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Go Build.go build backend-go (1)" />
+      <item itemvalue="Go Build.go build 2.解析jwt.go" />
+      <item itemvalue="Go Build.go build 3.hashpwd验证.go" />
+      <item itemvalue="Go Build.go build backend-go" />
+      <item itemvalue="Go Build.go build backend-go/test" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build backend-go (1)" />
+        <item itemvalue="Go Build.go build backend-go" />
+        <item itemvalue="Go Build.go build 3.hashpwd验证.go" />
+        <item itemvalue="Go Build.go build backend-go/test" />
+        <item itemvalue="Go Build.go build 2.解析jwt.go" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="VgoProject">
+    <environment>
+      <map>
+        <entry key="GOPROXY" value="https://goproxy.cn,direct" />
+      </map>
+    </environment>
+    <settings-migrated>true</settings-migrated>
+  </component>
+</project>

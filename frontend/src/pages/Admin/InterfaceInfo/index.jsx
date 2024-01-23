@@ -69,9 +69,9 @@ const AdminInterfaceInfo = () => {
   const [currentRow, setCurrentRow] = useState();
   const [selectionType, setSelectionType] = useState("checkbox");
   const [interfaceInfoList, setInterfaceInfoList] = useState([]); // table表数据
-  const [clearSearch, setClearOnSearch] = useState(false);
+  // const [clearSearch, setClearOnSearch] = useState(false);
 
-  const [form] = Form.useForm();
+  // const [form] = Form.useForm();
 
   const loadApiList = () => {
     listInterfaceInfoGet(titlesearch).then(({ data }) => {
@@ -91,7 +91,7 @@ const AdminInterfaceInfo = () => {
 
   // 模糊查询
   const onSearch = (values) => {
-    setClearOnSearch(true);
+    // setClearOnSearch(true);
     console.log("查询", values);
     loadApiList(titlesearch);
   };
@@ -113,7 +113,19 @@ const AdminInterfaceInfo = () => {
    *
    */
   const handleUpdate = async (values) => {
-    updateInterfaceInfoPut(values);
+    if (!currentRow){
+      return;
+    }
+    try {
+      await updateInterfaceInfoPut({
+        ID: currentRow.ID,
+        ...values});
+      return true;
+    }catch (error) {
+      console.log("错误：",error.message)
+      return false;
+    }
+
   };
 
   /**
@@ -167,7 +179,7 @@ const AdminInterfaceInfo = () => {
     {
       title: "请求头",
       dataIndex: "requestHeader",
-      key: "reqheader",
+      key: "requestHeader",
     },
     {
       title: "响应头",
@@ -182,13 +194,16 @@ const AdminInterfaceInfo = () => {
     },
     {
       title: "操作",
-      key: "action",
+      dataIndex: "option",
+      key: "option",
       render: (_, record) => [
         <a
           key="config"
           onClick={() => {
             handleUpdateModalVisible(true);
             setCurrentRow(record);
+            console.log("record:", record);
+            // console.log("currentRow:",currentRow)
           }}
         >
           修改
@@ -219,8 +234,8 @@ const AdminInterfaceInfo = () => {
           type="text"
           key="delete"
           danger
-          onClick={() => {
-            handleRemove(record);
+          onClick={async () => {
+            await handleRemove(record);
           }}
         >
           删除
@@ -308,8 +323,9 @@ const AdminInterfaceInfo = () => {
       />
       <UpdateModal
         visible={updateModalVisible}
-        values={currentRow}
-        onSubmit={(values) => {
+        values={currentRow || {}}
+        onSubmit={ (values) => {
+          console.log("father:", values)
           handleUpdate(values);
         }}
         onCancel={() => {

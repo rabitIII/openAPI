@@ -15,6 +15,6 @@ export const addInterfaceInfoPost = async (values) => {
 };
 
 export const updateInterfaceInfoPut = async (values) => {
-  const res = await axios.post("api/interface/update", values);
-  console.log("createAPI:", res);
+  const res = await axios.put("api/interface/update", values);
+  console.log("updateAPI: ", res);
 };
