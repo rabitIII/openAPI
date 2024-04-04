@@ -1,4 +1,4 @@
-package main
+package test
 
 import (
 	"backend-go/utils/pwd"

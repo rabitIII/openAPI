@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package gateway;
+
+option go_package = "./gtw";
+
+service gateway {
+  rpc Ping(Request) returns(Response);
+}
+
+message Request {}
+
+message Response {
+  string msg = 1;
+}

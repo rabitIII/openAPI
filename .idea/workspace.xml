@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7557f6cf-9595-4e58-944e-b346759047cd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/cmd/server/app.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/config/config_init.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/core/core_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/db/db_init.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/db/db_mysql.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/db/db_redis.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/db/db_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/gateway/rabit-api.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/openapi.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.idea/dataSources/c5cc49bb-8c08-4b99-b26b-7809d5789e34.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.idea/dataSources/c5cc49bb-8c08-4b99-b26b-7809d5789e34.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.idea/dataSources/d9510b2d-e626-48dc-aad5-6bd70d08cd85.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.idea/dataSources/d9510b2d-e626-48dc-aad5-6bd70d08cd85.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/init.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/core/init_config.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/core/init_config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/core/init_mysql.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/core/init_mysql.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/core/init_redis.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/core/init_redis.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/global/global.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/global/global.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/proto/rpc-api.proto" beforeDir="false" afterPath="$PROJECT_DIR$/backend/proto/rpc-api.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/settings.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/settings.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/test/1.生成jwt.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/test/1.jwt.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/test/2.解析jwt.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/test/2.解析jwt.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/test/3.hashpwd验证.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/test/3.测试hashpwdCheck_test.go" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GOROOT" url="file://$PROJECT_DIR$/../../../../envs/Go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="2edcy9EJQ4TxXVETy3HiOBk1vhR" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "git-widget-placeholder": "main",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "D:/code/project/goproject/src/openAPI/backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\code\project\goproject\src\openAPI\backend" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-gosdk-2946fb9b3188-155fe4b6e3a0-org.jetbrains.plugins.go.sharedIndexes.bundled-GO-233.15026.17" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
+  </component>
+</project>
