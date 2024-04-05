@@ -5,34 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="039eb279-339a-4cd1-9566-48b68c8f09f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/cmd/server/app.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/config_init.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/core_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/db_init.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/db_mysql.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/db_redis.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/db_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/rabit-api.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/openapi.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/c5cc49bb-8c08-4b99-b26b-7809d5789e34.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c5cc49bb-8c08-4b99-b26b-7809d5789e34.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9510b2d-e626-48dc-aad5-6bd70d08cd85.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9510b2d-e626-48dc-aad5-6bd70d08cd85.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/init.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/init_config.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/init_config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/init_mysql.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/init_mysql.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/init_redis.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/init_redis.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/global/global.go" beforeDir="false" afterPath="$PROJECT_DIR$/global/global.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/server/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/server/app.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config_init.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/config_init.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/settings.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/settings.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/db_init.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/db_init.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/db_mysql.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/db_mysql.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/db_redis.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/db_redis.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/db_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/db_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proto/rpc-api.proto" beforeDir="false" afterPath="$PROJECT_DIR$/proto/rpc-api.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/1.生成jwt.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/1.jwt.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/2.解析jwt.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/2.解析jwt.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/3.hashpwd验证.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/3.测试hashpwdCheck_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,9 +70,11 @@
     "Go Build.go build 3.hashpwd验证.go.executor": "Run",
     "Go Build.go build backend-go (1).executor": "Run",
     "Go Build.go build backend-go.executor": "Run",
+    "Go Build.go build backend-go/cmd/server.executor": "Run",
     "Go Test.TestInitConfig in backend-go/config.executor": "Run",
     "Go Test.TestInitConfig in backend-go/core.executor": "Run",
     "Go Test.TestInitMysql in backend-go/db.executor": "Run",
+    "Go Test.TestInitRedis in backend-go/db.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
@@ -97,7 +85,7 @@
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/code/project/goproject/src/openAPI",
+    "last_opened_file_path": "D:/code/project/Go/WebProject",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
@@ -121,27 +109,19 @@
       <recent name="D:\Code\Project\openapi\backend-go\flags" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\code\project\goproject\src\openAPI\backend" />
       <recent name="D:\code\project\goproject\src\openAPI\backend\config" />
       <recent name="D:\code\project\goproject\src\openAPI\backend\core" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestInitMysql in backend-go/db">
-    <configuration name="go build backend-go (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Test.TestInitRedis in backend-go/db">
+    <configuration name="go build backend-go/cmd/server" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="backend-go" />
+      <package value="backend-go/cmd/server" />
       <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/main.go" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build backend-go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="backend-go" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="backend-go" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/main.go" />
+      <filePath value="$PROJECT_DIR$/cmd/server/app.go" />
       <method v="2" />
     </configuration>
     <configuration name="TestInitConfig in backend-go/config" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -180,27 +160,40 @@
       <pattern value="^\QTestInitMysql\E$" />
       <method v="2" />
     </configuration>
+    <configuration name="TestInitRedis in backend-go/db" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <working_directory value="$PROJECT_DIR$/db" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="backend-go/db" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestInitRedis\E$" />
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="Go Build.go build backend-go (1)" />
-      <item itemvalue="Go Build.go build backend-go" />
+      <item itemvalue="Go Build.go build backend-go/cmd/server" />
+      <item itemvalue="Go Test.TestInitRedis in backend-go/db" />
       <item itemvalue="Go Test.TestInitConfig in backend-go/config" />
       <item itemvalue="Go Test.TestInitConfig in backend-go/core" />
       <item itemvalue="Go Test.TestInitMysql in backend-go/db" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestInitRedis in backend-go/db" />
+        <item itemvalue="Go Build.go build backend-go/cmd/server" />
         <item itemvalue="Go Test.TestInitMysql in backend-go/db" />
         <item itemvalue="Go Test.TestInitConfig in backend-go/core" />
         <item itemvalue="Go Test.TestInitConfig in backend-go/config" />
-        <item itemvalue="Go Build.go build backend-go (1)" />
-        <item itemvalue="Go Build.go build backend-go" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-gosdk-2946fb9b3188-155fe4b6e3a0-org.jetbrains.plugins.go.sharedIndexes.bundled-GO-233.15026.17" />
+        <option value="bundled-gosdk-33c477a475b1-b97fc8a1e17c-org.jetbrains.plugins.go.sharedIndexes.bundled-GO-241.14494.238" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-GO-241.14494.238" />
       </set>
     </attachedChunks>
   </component>

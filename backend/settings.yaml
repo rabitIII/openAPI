@@ -11,7 +11,7 @@ mysql:
   password: 12345678
   logLevel: error
 redis:
-  ip: 192.168.65.0
+  ip: 127.0.0.1
   port: 6380
   password: ""
   poolSize: 100

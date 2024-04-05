@@ -2,7 +2,6 @@ package db
 
 import (
 	"backend-go/config"
-	"backend-go/global"
 	"fmt"
 	"github.com/sirupsen/logrus"
 	"gorm.io/driver/mysql"
@@ -16,7 +15,7 @@ func InitMysql() {
 	if config.Conf.Mysql.Host == "" {
 		panic("[ERROR] 未配置mysql，取消gorm连接")
 	}
-	dsn := global.Config.Mysql.Dsn()
+	dsn := config.Conf.Mysql.Dsn()
 
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 
@@ -31,12 +30,4 @@ func InitMysql() {
 	sqlDB.SetConnMaxLifetime(time.Hour * 4) // 连接最大复用时间，不能超过mysql的wait_timeout
 
 	Conn = db
-}
-
-func Close() {
-	db, _ := Conn.DB()
-	err := db.Close()
-	if err != nil {
-		return
-	}
 }

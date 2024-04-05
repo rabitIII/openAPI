@@ -5,35 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7557f6cf-9595-4e58-944e-b346759047cd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/cmd/server/app.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/config/config_init.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/core/core_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/db/db_init.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/db/db_mysql.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/db/db_redis.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/db/db_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/gateway/rabit-api.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/openapi.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.idea/dataSources/c5cc49bb-8c08-4b99-b26b-7809d5789e34.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.idea/dataSources/c5cc49bb-8c08-4b99-b26b-7809d5789e34.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.idea/dataSources/d9510b2d-e626-48dc-aad5-6bd70d08cd85.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.idea/dataSources/d9510b2d-e626-48dc-aad5-6bd70d08cd85.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config/init.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/core/init_config.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/core/init_config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/core/init_mysql.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/core/init_mysql.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/core/init_redis.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/core/init_redis.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/global/global.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/global/global.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/proto/rpc-api.proto" beforeDir="false" afterPath="$PROJECT_DIR$/backend/proto/rpc-api.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/settings.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/settings.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/test/1.生成jwt.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/test/1.jwt.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/test/2.解析jwt.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/test/2.解析jwt.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/test/3.hashpwd验证.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/test/3.测试hashpwdCheck_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,9 +19,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2edcy9EJQ4TxXVETy3HiOBk1vhR" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -66,7 +38,7 @@
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "D:/code/project/goproject/src/openAPI/backend",
+    "last_opened_file_path": "D:/code/project/rabit-gvd/rabit-server",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn"
@@ -80,7 +52,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-gosdk-2946fb9b3188-155fe4b6e3a0-org.jetbrains.plugins.go.sharedIndexes.bundled-GO-233.15026.17" />
+        <option value="bundled-gosdk-33c477a475b1-b97fc8a1e17c-org.jetbrains.plugins.go.sharedIndexes.bundled-GO-241.14494.238" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-GO-241.14494.238" />
       </set>
     </attachedChunks>
   </component>

@@ -1,7 +1,16 @@
 package db
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
-func TestInitMysql(t *testing.T) {
-	InitMysql()
+func TestInitRedis(t *testing.T) {
+	InitRedis()
+	Rdb.Set("test", "value", 0)
+	result, err := Rdb.Get("test").Result()
+	if err != nil {
+		return
+	}
+	fmt.Println("redis test:", result)
 }

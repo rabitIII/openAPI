@@ -17,9 +17,10 @@ type Config struct {
 var Conf Config
 
 func InitConfig() {
-	yamlPath, err := os.ReadFile("settings.yaml")
+	yamlFile := "settings.yaml"
+	yamlPath, err := os.ReadFile(yamlFile)
 	if err != nil {
-		logrus.Fatalln("[ERROR] read yaml err: ", err.Error())
+		logrus.Fatalln("[ERROR] 读yaml文件错误: ", err.Error())
 	}
 	err = yaml.Unmarshal(yamlPath, &Conf)
 	if err != nil {
