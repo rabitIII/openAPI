@@ -5,20 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="039eb279-339a-4cd1-9566-48b68c8f09f7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c5cc49bb-8c08-4b99-b26b-7809d5789e34.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c5cc49bb-8c08-4b99-b26b-7809d5789e34.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9510b2d-e626-48dc-aad5-6bd70d08cd85.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9510b2d-e626-48dc-aad5-6bd70d08cd85.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/server/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/server/app.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config_init.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/config_init.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/settings.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/settings.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/db_init.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/db_init.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/db_mysql.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/db_mysql.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/db_redis.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/db_redis.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/db_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/db_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
