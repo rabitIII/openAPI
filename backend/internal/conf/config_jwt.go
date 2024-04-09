@@ -1,4 +1,4 @@
-package config
+package conf
 
 type Jwt struct {
 	Expires int    `yaml:"expires"` // 过期时间，单位：小时

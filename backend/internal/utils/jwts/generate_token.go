@@ -1,7 +1,7 @@
 package jwts
 
 import (
-	"backend-go/global"
+	"backend-go/internal/conf"
 	"github.com/golang-jwt/jwt/v5"
 	"time"
 )
@@ -12,14 +12,14 @@ func GenToken(user JwyPayLoad) (string, error) {
 	cliams := CustomClaims{
 		JwyPayLoad: user,
 		RegisteredClaims: jwt.RegisteredClaims{
-			ExpiresAt: jwt.NewNumericDate(time.Now().Add(time.Duration(global.Config.Jwt.Expires) * time.Hour)), // 过期时间
-			IssuedAt:  jwt.NewNumericDate(time.Now()),                                                           // 签发时间
-			NotBefore: jwt.NewNumericDate(time.Now()),                                                           // 生效时间
+			ExpiresAt: jwt.NewNumericDate(time.Now().Add(time.Duration(conf.Conf.Jwt.Expires) * time.Hour)), // 过期时间
+			IssuedAt:  jwt.NewNumericDate(time.Now()),                                                       // 签发时间
+			NotBefore: jwt.NewNumericDate(time.Now()),                                                       // 生效时间
 			//Issuer:    global.Config.Jwt.Issuer,                          // 签发人
 		},
 	}
 	// 使用HS256签名算法
 	t := jwt.NewWithClaims(jwt.SigningMethodHS256, cliams)
-	return t.SignedString([]byte(global.Config.Jwt.Secret))
+	return t.SignedString([]byte(conf.Conf.Jwt.Secret))
 
 }

@@ -1,7 +1,7 @@
 package InterfaceInfo_api
 
 import (
-	"backend-go/models"
+	"backend-go/internal/models"
 	"github.com/gin-gonic/gin"
 )
 

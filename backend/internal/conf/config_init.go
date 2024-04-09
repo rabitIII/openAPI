@@ -1,4 +1,4 @@
-package config
+package conf
 
 import (
 	"fmt"
@@ -17,7 +17,8 @@ type Config struct {
 var Conf Config
 
 func InitConfig() {
-	yamlFile := "settings.yaml"
+	// 从项目根路径读取
+	yamlFile := "./config/settings.yaml"
 	yamlPath, err := os.ReadFile(yamlFile)
 	if err != nil {
 		logrus.Fatalln("[ERROR] 读yaml文件错误: ", err.Error())

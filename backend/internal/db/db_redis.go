@@ -1,7 +1,7 @@
 package db
 
 import (
-	"backend-go/config"
+	"backend-go/internal/conf"
 	"github.com/go-redis/redis"
 )
 
@@ -9,8 +9,8 @@ var Rdb *redis.Client
 
 func InitRedis() {
 	rdb := redis.NewClient(&redis.Options{
-		Addr:     config.Conf.Redis.Addr(),
-		Password: config.Conf.Redis.Password,
+		Addr:     conf.Conf.Redis.Addr(),
+		Password: conf.Conf.Redis.Password,
 		DB:       0,
 	})
 

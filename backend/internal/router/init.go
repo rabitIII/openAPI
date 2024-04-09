@@ -1,8 +1,8 @@
 package router
 
 import (
-	"backend-go/global"
-	"backend-go/middleware"
+	"backend-go/internal/conf"
+	middleware2 "backend-go/internal/middleware"
 	"fmt"
 	"github.com/gin-gonic/gin"
 )
@@ -26,12 +26,12 @@ func StartGin() {
 	r := gin.Default()
 
 	// 全局中间件
-	r.Use(middleware.Cors, middleware.RefreshToken)
+	r.Use(middleware2.Cors, middleware2.RefreshToken)
 	apiGroup = r.Group("api")
 
 	UserRouter()
 	InterFaceRouter()
-	addr := global.Config.System.Addr()
+	addr := conf.Conf.System.Addr()
 	err := r.Run(addr)
 	if err != nil {
 		fmt.Println("[Error] r.Run " + err.Error())

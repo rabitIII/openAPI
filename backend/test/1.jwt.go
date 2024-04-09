@@ -1,7 +1,7 @@
 package test
 
 import (
-	"backend-go/utils/jwts"
+	jwts2 "backend-go/internal/utils/jwts"
 	"fmt"
 	"os"
 	"testing"
@@ -15,7 +15,7 @@ func TestJwt(t *testing.T) {
 	//	RoleID:   2,
 	//	UserID:   1,
 	//}, secretKey)
-	token, err := jwts.GenToken(jwts.JwyPayLoad{
+	token, err := jwts2.GenToken(jwts2.JwyPayLoad{
 		NickName: "fengfeng",
 		RoleID:   2,
 		UserID:   1,

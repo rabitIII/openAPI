@@ -1,7 +1,7 @@
 package res
 
 import (
-	"backend-go/utils/valid"
+	"backend-go/internal/utils/valid"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )

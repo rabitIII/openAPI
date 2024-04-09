@@ -1,9 +1,9 @@
 package user_api
 
 import (
-	"backend-go/models"
-	"backend-go/service/common/list"
-	"backend-go/service/common/res"
+	models2 "backend-go/internal/models"
+	"backend-go/internal/service/common/list"
+	"backend-go/internal/service/common/res"
 	"github.com/gin-gonic/gin"
 )
 
@@ -15,13 +15,13 @@ type UserListRequest struct {
 
 func (UserApi) UserListView(c *gin.Context) {
 
-	var cr models.Pagination
+	var cr models2.Pagination
 	err := c.ShouldBindQuery(cr)
 	if err != nil {
 		return
 	}
 
-	_list, count, _ := list.QueryList(models.UserModel{}, list.Option{
+	_list, count, _ := list.QueryList(models2.UserModel{}, list.Option{
 		Pagination: cr,
 		Likes:      []string{"nickName", "userName"},
 		Preload:    []string{"RoleModel"},

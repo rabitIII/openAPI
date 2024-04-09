@@ -1,7 +1,7 @@
 package test
 
 import (
-	"backend-go/utils/pwd"
+	"backend-go/internal/utils/pwd"
 	"fmt"
 )
 

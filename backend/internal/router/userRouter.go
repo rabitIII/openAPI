@@ -2,7 +2,7 @@ package router
 
 import (
 	"backend-go/api"
-	"backend-go/middleware"
+	"backend-go/internal/middleware"
 )
 
 func UserRouter() {

@@ -1,13 +1,14 @@
 package main
 
 import (
-	"backend-go/config"
-	"backend-go/db"
+	"backend-go/internal/conf"
+	"backend-go/internal/db"
+	"backend-go/internal/router"
 )
 
 func main() {
 
-	config.InitConfig()
+	conf.InitConfig()
 
 	// 数据库初始化
 	// db: MySQL, Redis
@@ -15,4 +16,6 @@ func main() {
 	defer func() {
 		db.Close()
 	}()
+
+	router.StartGin()
 }

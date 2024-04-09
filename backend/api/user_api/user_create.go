@@ -2,9 +2,9 @@ package user_api
 
 import (
 	"backend-go/global"
-	"backend-go/models"
-	"backend-go/service/common/res"
-	"backend-go/utils/pwd"
+	"backend-go/internal/models"
+	"backend-go/internal/service/common/res"
+	"backend-go/internal/utils/pwd"
 	"fmt"
 	"github.com/gin-gonic/gin"
 )

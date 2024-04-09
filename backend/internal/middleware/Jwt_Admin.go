@@ -1,8 +1,8 @@
 package middleware
 
 import (
-	"backend-go/service/common/res"
-	"backend-go/utils/jwts"
+	"backend-go/internal/service/common/res"
+	"backend-go/internal/utils/jwts"
 	"github.com/gin-gonic/gin"
 )
 

@@ -2,10 +2,10 @@ package user_api
 
 import (
 	"backend-go/global"
-	"backend-go/models"
-	"backend-go/service/common/res"
-	"backend-go/utils/jwts"
-	"backend-go/utils/pwd"
+	models2 "backend-go/internal/models"
+	"backend-go/internal/service/common/res"
+	jwts2 "backend-go/internal/utils/jwts"
+	"backend-go/internal/utils/pwd"
 	//"context"
 	"github.com/gin-gonic/gin"
 	//"github.com/google/uuid"
@@ -30,7 +30,7 @@ func (UserApi) UserLoginView(c *gin.Context) {
 	}
 
 	// 数据库查询验证该账号数据
-	var user models.UserModel
+	var user models2.UserModel
 	err = global.DB.Take(&user, "userAccount = ?", cr.UserAccount).Error
 	if err != nil {
 		global.Log.Warn("用户名不存在", cr.UserAccount)
@@ -70,7 +70,7 @@ func (UserApi) UserLoginView(c *gin.Context) {
 	//c.JSON(200, utils.ResponseOK(res))
 
 	// 验证通过后将response里的数据进行加密
-	token, err := jwts.GenToken(jwts.JwyPayLoad{
+	token, err := jwts2.GenToken(jwts2.JwyPayLoad{
 		NickName: user.UserAccount,
 		RoleID:   user.RoleID,
 		UserID:   user.ID,
@@ -81,7 +81,7 @@ func (UserApi) UserLoginView(c *gin.Context) {
 	}
 
 	// 创建登录表
-	err = global.DB.Create(&models.LoginModel{
+	err = global.DB.Create(&models2.LoginModel{
 		UserID:   user.Model.ID,
 		NickName: user.NickName,
 		Token:    token,

@@ -1,7 +1,7 @@
 package db
 
 import (
-	"backend-go/config"
+	"backend-go/internal/conf"
 	"fmt"
 	"github.com/sirupsen/logrus"
 	"gorm.io/driver/mysql"
@@ -12,10 +12,10 @@ import (
 var Conn *gorm.DB
 
 func InitMysql() {
-	if config.Conf.Mysql.Host == "" {
+	if conf.Conf.Mysql.Host == "" {
 		panic("[ERROR] 未配置mysql，取消gorm连接")
 	}
-	dsn := config.Conf.Mysql.Dsn()
+	dsn := conf.Conf.Mysql.Dsn()
 
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 

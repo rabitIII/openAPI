@@ -2,7 +2,7 @@ package list
 
 import (
 	"backend-go/global"
-	"backend-go/models"
+	"backend-go/internal/models"
 	"fmt"
 	"gorm.io/gorm"
 )

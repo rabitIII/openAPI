@@ -2,21 +2,21 @@ package user_api
 
 import (
 	"backend-go/global"
-	"backend-go/models"
-	"backend-go/service/common/res"
+	models2 "backend-go/internal/models"
+	"backend-go/internal/service/common/res"
 	"fmt"
 	"github.com/gin-gonic/gin"
 )
 
 func (UserApi) UserRemoveView(c *gin.Context) {
-	var cr models.IDListRequest
+	var cr models2.IDListRequest
 	err := c.ShouldBindJSON(&cr)
 	if err != nil {
 		//res.FailWithError(err, c)
 		return
 	}
 
-	var userList []models.UserModel
+	var userList []models2.UserModel
 	global.DB.Find(&userList, cr.IDList)
 
 	if len(cr.IDList) != len(userList) {

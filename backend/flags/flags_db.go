@@ -2,17 +2,17 @@ package flags
 
 import (
 	"backend-go/global"
-	"backend-go/models"
+	models2 "backend-go/internal/models"
 	"github.com/sirupsen/logrus"
 )
 
 func DB() {
 	err := global.DB.Set("gorm:table_options", "ENGINE=InnoDB").AutoMigrate(
-		&models.UserModel{},
-		&models.RoleModel{},
-		&models.LoginModel{},
-		&models.LoginModel{},
-		&models.InterfaceInfo{},
+		&models2.UserModel{},
+		&models2.RoleModel{},
+		&models2.LoginModel{},
+		&models2.LoginModel{},
+		&models2.InterfaceInfo{},
 	)
 
 	if err != nil {
