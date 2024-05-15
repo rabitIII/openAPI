@@ -1,0 +1,9 @@
+server:
+  http:
+    addr: ":8080"
+databases:
+  mysql:
+    dsn: "root:12345678@tcp(127.0.0.1:3306)/rabit_api?charset=utf8mb4&parseTime=True&loc=Local"
+    maxLifeTime: 4  # hour
+    maxIdleConn: 200
+    maxOpenConn: 200
