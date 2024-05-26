@@ -1,8 +1,9 @@
 package services
 
 import (
+	"rabit-api-backend/models"
+
 	"github.com/gin-gonic/gin"
-	"rabit-api-backend/internal/models"
 )
 
 type InterfaceService struct {

@@ -1,8 +1,9 @@
 package models
 
 import (
-	"gorm.io/gorm"
 	"rabit-api-backend/global"
+
+	"gorm.io/gorm"
 )
 
 // InterfaceModel  -> database: `interface_info`
@@ -24,11 +25,11 @@ func (i *InterfaceModel) ReadList() error {
 	//var interfaceModels []InterfaceModel
 	// select * from interface_info
 	conversation := "name,description,url,method,requestHeader,responseHeader"
-	global.SqlDB.Raw("SELECT ? FROM interface_info", conversation)
+	global.DB.Raw("SELECT ? FROM interface_info", conversation)
 	return nil
 }
 func (i *InterfaceModel) Create() error {
-	global.SqlDB.Raw("INSERT INTO interface_info (name) VALUES (?)", i.Name)
+	global.DB.Raw("INSERT INTO interface_info (name) VALUES (?)", i.Name)
 	return nil
 }
 

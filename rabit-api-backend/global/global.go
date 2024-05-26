@@ -1,7 +1,12 @@
 package global
 
-import "gorm.io/gorm"
+import (
+	"rabit-api-backend/config"
+
+	"gorm.io/gorm"
+)
 
 var (
-	SqlDB *gorm.DB
+	DB     *gorm.DB
+	Config *config.Config
 )

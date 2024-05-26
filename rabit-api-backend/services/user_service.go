@@ -1,6 +1,6 @@
 package services
 
-import "rabit-api-backend/internal/models"
+import "rabit-api-backend/models"
 
 type userService struct {
 	// 依赖注入模型
@@ -8,5 +8,6 @@ type userService struct {
 }
 
 func (s *userService) RegisterUser(user *models.UserModel) error {
-	userModel := &userService{}
+	// userModel := &userService{}
+	return nil
 }
