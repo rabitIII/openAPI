@@ -9,10 +9,10 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
-const yamlPath = "settings.yaml"
+const YAML_PATH = "settings.yaml"
 
 func InitConfig() (c *config.Config) {
-	byteData, err := os.ReadFile(yamlPath)
+	byteData, err := os.ReadFile(YAML_PATH)
 	if err != nil {
 		log.Fatal("[ERROR]read yaml error: ", err.Error())
 	}

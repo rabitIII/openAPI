@@ -18,12 +18,12 @@ import "gorm.io/gorm"
 
 type UserModel struct {
 	gorm.Model
-	UserAccount  string `json:"-" gorm:"size:36;column:userAccount;unique;not null;comment:用户登录账号"`   // 用户登录账号
-	UserPassword string `json:"-" gorm:"size:128;column:userPassword;comment:密码"`                     // 用户的密码
-	NickName     string `json:"nickName" gorm:"size:36;column:nickName;comment:用户昵称"`                 // 用户的昵称
-	Email        string `json:"email" gorm:"size:128;column:email;comment:用户邮箱"`                      // 用户的邮箱
-	Token        string `json:"-" gorm:"size:36;column:token;comment:用户的唯一识别符"`                       // 其他平台的唯一id
-	RoleID       uint   `json:"roleID" gorm:"size:36;column:roleID;comment:用户的角色ID(0-普通用户; 1-Admin)"` // 用户的角色ID
+	UserAccount  string `json:"userAccount" gorm:"size:36;column:userAccount;unique;not null;comment:用户登录账号"` // 用户登录账号
+	UserPassword string `json:"userPassword" gorm:"size:128;column:userPassword;not null;comment:密码"`         // 用户的密码
+	NickName     string `json:"nickName" gorm:"size:36;column:nickName;comment:用户昵称"`                         // 用户的昵称
+	Email        string `json:"email" gorm:"size:128;column:email;comment:用户邮箱"`                              // 用户的邮箱
+	Token        string `json:"-" gorm:"size:36;column:token;comment:用户的唯一识别符"`                               // 其他平台的唯一id
+	RoleID       uint   `json:"roleID" gorm:"size:2;column:roleID;comment:用户的角色ID(0-普通用户; 1-Admin)"`          // 用户的角色ID
 	AccessKey    string `json:"accessKey" gorm:"comment:用户认证;size:512"`
 	SecretKey    string `json:"secretKey" gorm:"comment:密钥;size:512"`
 	// RoleModel    RoleModel `gorm:"foreignKey:RoleID;" json:"roleModel"`
@@ -34,6 +34,16 @@ type UserCreateRequest struct {
 	UserPassword string `json:"userPassword" bingding:"required"`
 	NickName     string `json:"nickName"` // user-nickname
 	RoleID       uint   `json:"roleId" bingding:"required"`
+}
+
+type UserInfo struct {
+	Id          uint   `json:"id" binding:"required"`
+	UserAccount string `json:"userAccount" binding:"required"`
+	NickName    string `json:"nickName"`
+	Email       string `json:"email"`
+	RoleID      uint   `json:"roleID"`
+	AccessKey   string `json:"accessKey"`
+	SecretKey   string `json:"secretKey"`
 }
 
 // Create	创建用户

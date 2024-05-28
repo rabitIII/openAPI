@@ -28,7 +28,7 @@ func init() {
 }
 
 func SetupGin() {
-	addr := global.Config.Server.Http.Addr
+	addr := global.Config.Server.Http.Addr()
 
 	if err := r.Run(addr); err != nil {
 		fmt.Println("[ERROR] running err: " + err.Error())

@@ -2,32 +2,27 @@ package userapi
 
 import (
 	"fmt"
-	"log"
 	"net/http"
 	"rabit-api-backend/global"
 	"rabit-api-backend/models"
+	"rabit-api-backend/services/res"
 
 	"github.com/gin-gonic/gin"
 )
 
-type Responce struct {
-	Code int
-	Data int
-	Msg  string
-}
-
-func (UserApi) UserCreateView(c *gin.Context) {
+func (UserApi) UserCreateView(ctx *gin.Context) {
 	var cr models.UserCreateRequest
-	err := c.ShouldBindQuery(&cr)
+
+	err := ctx.ShouldBindJSON(&cr)
 	if err != nil {
-		log.Fatalln("[ERROR] 读参错误, err:%w", err)
+		fmt.Println("空指针: ", err.Error())
 		return
 	}
 
 	var user models.UserModel
 	err = global.DB.Take(&user, "userAccount = ?", cr.UserAccount).Error
 	if err == nil {
-		log.Fatalln("账号存在")
+		ctx.JSON(http.StatusForbidden, res.ResponseError(res.ParamsError, "账号已存在！"))
 		return
 	}
 
@@ -39,16 +34,19 @@ func (UserApi) UserCreateView(c *gin.Context) {
 		cr.NickName = fmt.Sprintf("user_%d", maxId+1)
 	}
 
-	err = global.DB.Create(&models.UserModel{
+	var userDTO models.UserInfo
+
+	userData := &models.UserModel{
 		UserAccount:  cr.UserAccount,
 		UserPassword: cr.UserPassword,
 		NickName:     cr.NickName,
 		RoleID:       cr.RoleID,
-	}).Error
-	if err != nil {
-		log.Fatalln("用户创建失败, err:%w", err)
-		return
 	}
 
-	c.JSON(http.StatusOK, Responce{0, 1, "created success!"})
+	affected := global.DB.Create(userData).Scan(&userDTO).RowsAffected
+	if affected == 0 {
+		ctx.JSON(http.StatusInternalServerError, res.ResponseError(res.ServerError, "user register err"))
+	}
+
+	ctx.JSON(http.StatusOK, res.ResponseOK(userDTO, "create user success!"))
 }

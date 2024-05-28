@@ -1,6 +1,8 @@
 server:
   http:
-    addr: ":8080"
+    host: ""
+    port: "8080"
+    env: "dev"
 databases:
   mysql:
     username: root
