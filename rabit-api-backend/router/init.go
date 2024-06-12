@@ -2,7 +2,6 @@ package router
 
 import (
 	"fmt"
-	"net/http"
 	"rabit-api-backend/global"
 
 	"github.com/gin-gonic/gin"
@@ -16,12 +15,13 @@ func init() {
 	r = gin.Default()
 
 	// main router
+	// r.Use(middleware.Cors, middleware.RefreshToken)
 	indexGroup = r.Group("rabitApi")
-	indexGroup.GET("/", func(ctx *gin.Context) {
-		ctx.JSON(http.StatusOK, gin.H{
-			"message": "Success",
-		})
-	})
+	// indexGroup.GET("/", func(ctx *gin.Context) {
+	// 	ctx.JSON(http.StatusOK, gin.H{
+	// 		"message": "Success",
+	// 	})
+	// })
 
 	// children router
 	UserRouter()

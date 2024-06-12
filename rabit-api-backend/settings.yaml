@@ -14,3 +14,8 @@ databases:
     maxLifeTime: 4 # hour
     maxIdleConn: 200
     maxOpenConn: 200
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    DB: 0

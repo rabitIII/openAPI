@@ -18,50 +18,43 @@ import "gorm.io/gorm"
 
 type UserModel struct {
 	gorm.Model
-	UserAccount  string `json:"userAccount" gorm:"size:36;column:userAccount;unique;not null;comment:用户登录账号"` // 用户登录账号
-	UserPassword string `json:"userPassword" gorm:"size:128;column:userPassword;not null;comment:密码"`         // 用户的密码
-	NickName     string `json:"nickName" gorm:"size:36;column:nickName;comment:用户昵称"`                         // 用户的昵称
-	Email        string `json:"email" gorm:"size:128;column:email;comment:用户邮箱"`                              // 用户的邮箱
-	Token        string `json:"-" gorm:"size:36;column:token;comment:用户的唯一识别符"`                               // 其他平台的唯一id
-	RoleID       uint   `json:"roleID" gorm:"size:2;column:roleID;comment:用户的角色ID(0-普通用户; 1-Admin)"`          // 用户的角色ID
-	AccessKey    string `json:"accessKey" gorm:"comment:用户认证;size:512"`
-	SecretKey    string `json:"secretKey" gorm:"comment:密钥;size:512"`
+	UserAccount  string  `json:"user_account" gorm:"size:256;unique;not null;comment:用户登录账号"` // 用户登录账号
+	UserPassword string  `json:"user_password" gorm:"size:256;not null;comment:密码"`           // 用户的密码
+	NickName     string  `json:"nick_name" gorm:"size:256;comment:用户昵称"`                      // 用户的昵称
+	AvatarUrl    *string `json:"avatar_url,omitempty" gorm:"size:1024;comment:用户头像地址"`
+	Gender       uint    `json:"gender" gorm:"comment:用户性别;size:2"`
+	Phone        *string `json:"phone,omitempty" gorm:"size:256;comment:用户手机"`           // 用户头像
+	Email        string  `json:"email" gorm:"size:256;comment:用户邮箱"`                     // 用户的邮箱
+	RoleID       uint    `json:"role_id" gorm:"size:2;comment:用户的角色ID(0-普通用户; 1-Admin)"` // 用户的角色ID
+	UserStatus   uint    `json:"user_status" gorm:"size:2;default:0;comment:用戶status(0-正常)"`
+	AccessKey    string  `json:"access_key" gorm:"comment:用户认证;size:512"`
+	SecretKey    string  `json:"secret_key" gorm:"comment:密钥;size:512"`
 	// RoleModel    RoleModel `gorm:"foreignKey:RoleID;" json:"roleModel"`
 }
 
 type UserCreateRequest struct {
-	UserAccount  string `json:"userAccount" binding:"required"`
-	UserPassword string `json:"userPassword" bingding:"required"`
-	NickName     string `json:"nickName"` // user-nickname
-	RoleID       uint   `json:"roleId" bingding:"required"`
+	UserAccount  string `json:"user_account" binding:"required"`
+	UserPassword string `json:"user_password" bingding:"required"`
+	NickName     string `json:"nick_name"` // user-nickname
+	RoleID       uint   `json:"role_id"`
 }
 
 type UserInfo struct {
-	Id          uint   `json:"id" binding:"required"`
-	UserAccount string `json:"userAccount" binding:"required"`
-	NickName    string `json:"nickName"`
-	Email       string `json:"email"`
-	RoleID      uint   `json:"roleID"`
-	AccessKey   string `json:"accessKey"`
-	SecretKey   string `json:"secretKey"`
+	ID          uint    `json:"id"`
+	UserAccount string  `json:"user_account"`
+	NickName    string  `json:"nick_name"`
+	AvatarUrl   *string `json:"avatar_url"`
+	Gender      uint    `json:"gender"`
+	Phone       *string `json:"phone"`
+	Email       string  `json:"email"`
+	RoleID      uint    `json:"role_id"`
+	UserStatus  uint    `json:"user_status"`
+	AccessKey   string  `json:"access_key"`
+	SecretKey   string  `json:"secret_key"`
 }
 
-// Create	创建用户
-func (u *UserModel) Create(db *gorm.DB) error {
-	return db.Create(u).Error
-}
-
-// FindUserByID	查询用户
-func FindUserByID(db *gorm.DB, id uint) (*UserModel, error) {
-	var user UserModel
-	res := db.First(&user, id)
-	return &user, res.Error
-}
-
-func (u *UserModel) Update(db *gorm.DB) error {
-	return db.Save(u).Error
-}
-
-func (u *UserModel) Delete(db *gorm.DB) error {
-	return db.Delete(u).Error
+type UserChangePassword struct {
+	ID            uint   `json:"id" binding:"required"`
+	UserPassword  string `json:"user_password" binding:"required,min=8"`
+	CheckPassword string `json:"check_password" binding:"required,eqfield=UserPassword"`
 }

@@ -10,6 +10,7 @@ func main() {
 	// 初始化配置
 	global.Config = core.InitConfig()
 	global.DB = core.InitMysql()
+	global.Rdb = core.InitRedis()
 
 	router.SetupGin()
 }
