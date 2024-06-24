@@ -1,13 +1,11 @@
 package services
 
-import "rabit-api-backend/models"
+// type userService struct {
+// 	// 依赖注入模型
+// 	userRepository *models.UserModel
+// }
 
-type userService struct {
-	// 依赖注入模型
-	userRepository *models.UserModel
-}
-
-func (s *userService) RegisterUser(user *models.UserModel) error {
-	// userModel := &userService{}
-	return nil
-}
+// func (s *userService) RegisterUser(user *models.UserModel) error {
+// 	// userModel := &userService{}
+// 	return nil
+// }

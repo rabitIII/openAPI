@@ -1,42 +1,30 @@
 package models
 
 import (
-	"rabit-api-backend/global"
-
 	"gorm.io/gorm"
 )
 
 // InterfaceModel  -> database: `interface_info`
 type InterfaceModel struct {
 	gorm.Model
-	Name           string            `gorm:"name"`
-	Description    string            `gorm:"description"`
-	Url            string            `gorm:"url"`
-	Method         string            `gorm:"method"`
-	RequestHeader  map[string]string `gorm:"requestHeader"`
-	ResponseHeader map[string]string `gorm:"responseHeader"`
-	UserId         int               `gorm:"userId"`
-	Status         int               `gorm:"status"`
-	IsDelete       int               `gorm:"isDelete"`
+	Name           string `gorm:"name"`
+	Description    string `gorm:"description"`
+	Url            string `gorm:"url"`
+	Method         string `gorm:"method"`
+	RequestHeader  string `gorm:"request_header"`
+	ResponseHeader string `gorm:"response_header"`
+	UserId         uint   `gorm:"user_id"`
+	Status         bool   `gorm:"status"`
+	IsDelete       bool   `gorm:"isDelete"`
 }
 
-func (i *InterfaceModel) ReadList() error {
-	// TODO 读取api接口列表
-	//var interfaceModels []InterfaceModel
-	// select * from interface_info
-	conversation := "name,description,url,method,requestHeader,responseHeader"
-	global.DB.Raw("SELECT ? FROM interface_info", conversation)
-	return nil
-}
-func (i *InterfaceModel) Create() error {
-	global.DB.Raw("INSERT INTO interface_info (name) VALUES (?)", i.Name)
-	return nil
-}
-
-func (i *InterfaceModel) Update() error {
-	return nil
-}
-
-func (i *InterfaceModel) Delete() error {
-	return nil
+type InterfaceCreateRequest struct {
+	UserId         uint   `json:"user_id" binding:"required"`
+	Name           string `json:"name" binding:"required"`
+	Description    string `json:"description"`
+	Url            string `json:"url" binding:"required"`
+	Method         string `json:"method" binding:"required"`
+	RequestHeader  string `json:"request_header"`
+	ResponseHeader string `json:"response_header"`
+	RequestParams  string `json:"request_params"`
 }

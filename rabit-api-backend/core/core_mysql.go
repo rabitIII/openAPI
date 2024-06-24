@@ -17,7 +17,7 @@ func InitMysql() *gorm.DB {
 	if err != nil {
 		log.Fatal("[ERROR]mysql connect error: ", err.Error())
 	}
-	err = db.AutoMigrate(&models.UserModel{})
+	err = db.AutoMigrate(&models.UserModel{}, &models.InterfaceModel{})
 	if err != nil {
 		log.Fatal("[ERROR]create db tables error: ", err.Error())
 	}

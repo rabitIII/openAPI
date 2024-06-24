@@ -16,15 +16,11 @@ func init() {
 
 	// main router
 	// r.Use(middleware.Cors, middleware.RefreshToken)
-	indexGroup = r.Group("rabitApi")
-	// indexGroup.GET("/", func(ctx *gin.Context) {
-	// 	ctx.JSON(http.StatusOK, gin.H{
-	// 		"message": "Success",
-	// 	})
-	// })
+	indexGroup = r.Group("api")
 
 	// children router
 	UserRouter()
+	InterfaceRouter()
 }
 
 func SetupGin() {
