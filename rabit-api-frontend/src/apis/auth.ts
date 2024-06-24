@@ -21,11 +21,9 @@ interface AuthRequest {
 }
 
 export function register({userAccount, userPassword}: AuthRequest) {
-    return useAxios.post("/api/login", 
-        
-        {
-        userAccount,
-        userPassword,
+    return useAxios.post("/api/login", {
+        user_account:  userAccount,
+        user_password: userPassword,
     })
 }
 

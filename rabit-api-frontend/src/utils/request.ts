@@ -5,8 +5,9 @@ import axios from "axios";
 export const useAxios = axios.create({
     baseURL: "http://localhost:8080",
     timeout: 1000,
-    
-
+    headers: {
+        'Authorization': localStorage.getItem('token'),
+    },
 });
 
 export interface baseResponse<T> {

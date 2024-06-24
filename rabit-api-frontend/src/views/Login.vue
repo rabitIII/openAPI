@@ -23,24 +23,33 @@
     </a-watermark>
 </template>
   
-<script>
+<script setup>
+import { register } from '@/apis/auth';
+import { useAxios } from '@/utils/request';
+import { Message } from '@arco-design/web-vue';
 import { reactive } from 'vue';
+import { useRouter } from 'vue-router';
 
-export default {
-setup() {
-    const form = reactive({
-        userAccount: '',
-        userPassword: '',
-    });
-    const handleSubmit = (data) => {
-    console.log(data);
-    };
-
-    return {
-    form,
-    handleSubmit,
-    };
-},
+const router = useRouter()
+const form = reactive({
+    userAccount: '',
+    userPassword: '',
+});
+async function handleSubmit() {
+    useAxios.post('/user/login', {
+        user_account: form.userAccount,
+        user_password: form.userPassword,
+    }).then(res => {
+        if (res.code === 0) {
+            // setting token
+            if (res.data.user.role === 1) {
+                router.push("/admin")
+            } else if (res.data.user.role === 0) {
+                router.push("/user")
+            }
+            Message.success('登录成功')
+        }
+    })
 };
 </script>
   
