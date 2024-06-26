@@ -2,6 +2,7 @@ package router
 
 import (
 	"rabit-api-backend/api"
+	"rabit-api-backend/middleware"
 )
 
 func UserRouter() {
@@ -18,6 +19,11 @@ func UserRouter() {
 		userRouter.POST("login", userApi.UserLoginView)
 		userRouter.POST("register", userApi.UserCreateView)
 		userRouter.POST("logout", userApi.UserLogoutView)
+
+		/*
+			current		用户登录状态
+		*/
+		userRouter.GET("current", middleware.AuthRole, userApi.GetCurrentUser)
 
 		/*
 			(管理员)

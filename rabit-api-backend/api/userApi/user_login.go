@@ -86,3 +86,22 @@ func (UserApi) UserLogoutView(ctx *gin.Context) {
 	}
 	ctx.JSON(http.StatusOK, utils.ResponseOK(nil))
 }
+
+// GetCurrentUser
+//
+// @Description 用户登录状态，
+func (UserApi) GetCurrentUser(c *gin.Context) {
+	userId, exists := c.Get("userId")
+	if !exists {
+		c.JSON(http.StatusInternalServerError, utils.ResponseError(utils.ServerError, "获取用户信息失败！"))
+		return
+	}
+
+	var user models.UserInfo
+	err := global.DB.Take(&models.UserModel{}, userId).Scan(&user).Error
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, utils.ResponseError(utils.ServerError, "用户不存在!"))
+		return
+	}
+	c.JSON(http.StatusOK, utils.ResponseOK(user))
+}

@@ -32,6 +32,7 @@ type UserModel struct {
 	// RoleModel    RoleModel `gorm:"foreignKey:RoleID;" json:"roleModel"`
 }
 
+// UserCreateRequest 新建用户请求的请求参数
 type UserCreateRequest struct {
 	UserAccount  string `json:"user_account" binding:"required"`
 	UserPassword string `json:"user_password" bingding:"required"`
@@ -39,6 +40,7 @@ type UserCreateRequest struct {
 	RoleID       uint   `json:"role_id"`
 }
 
+// UserInfo 指定id的用户信息
 type UserInfo struct {
 	ID          uint    `json:"id"`
 	UserAccount string  `json:"user_account"`
@@ -53,6 +55,7 @@ type UserInfo struct {
 	SecretKey   string  `json:"secret_key"`
 }
 
+// UserChangePassword 修改密码的所需参数
 type UserChangePassword struct {
 	ID            uint   `json:"id" binding:"required"`
 	UserPassword  string `json:"user_password" binding:"required,min=8"`

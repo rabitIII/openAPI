@@ -11,6 +11,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// UserListView 获取所有用户的信息列表
 func (UserApi) UserListView(ctx *gin.Context) {
 	// 获取num和page的参数，并验证
 	numParam := ctx.Param("num")
@@ -48,6 +49,7 @@ func (UserApi) UserListView(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, utils.ResponseOK(userList, fmt.Sprintf("查找到了%v个用户！", affected)))
 }
 
+// UserByIdView	获取指定id的用户信息
 func (UserApi) UserByIdView(ctx *gin.Context) {
 	// 验证id是否合法
 	id := utils.IsNumber(ctx.Param("id"))
